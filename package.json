@@ -39,7 +39,13 @@
   "scripts": {
     "build": "node src/main.ts",
     "check": "node src/main.ts && node scripts/check.ts",
+    "preview": "node scripts/preview.ts",
+    "screenshots": "node scripts/screenshots.ts",
     "package": "npx --yes @vscode/vsce@4 package --no-dependencies"
+  },
+  "devDependencies": {
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.3.2"
   },
   "contributes": {
     "themes": [
