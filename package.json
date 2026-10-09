@@ -1,0 +1,58 @@
+{
+  "name": "vscode-theme-duotone-blue",
+  "displayName": "DuoTone Blue",
+  "description": "A double-hue blue and gold theme for Visual Studio Code",
+  "version": "0.1.0",
+  "publisher": "tsangkenneth",
+  "author": "Kenneth Tsang",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsangkenneth/vscode-theme-duotone-blue.git"
+  },
+  "homepage": "https://github.com/tsangkenneth/vscode-theme-duotone-blue#readme",
+  "bugs": {
+    "url": "https://github.com/tsangkenneth/vscode-theme-duotone-blue/issues"
+  },
+  "engines": {
+    "vscode": "^1.67.2",
+    "node": ">=22.18"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color theme",
+    "duotone",
+    "blue",
+    "gold",
+    "dark",
+    "light"
+  ],
+  "galleryBanner": {
+    "color": "#282f33",
+    "theme": "dark"
+  },
+  "scripts": {
+    "build": "node src/main.ts",
+    "check": "node src/main.ts && node scripts/check.ts",
+    "package": "npx --yes @vscode/vsce@4 package --no-dependencies"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "DuoTone Blue Light",
+        "uiTheme": "vs",
+        "path": "./themes/duotone-blue-light.json"
+      },
+      {
+        "label": "DuoTone Blue Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/duotone-blue-dark.json"
+      }
+    ]
+  }
+}

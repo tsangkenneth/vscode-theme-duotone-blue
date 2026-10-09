@@ -1,0 +1,9 @@
+*
+**/*
+
+!package.json
+!LICENSE
+!README.md
+!CHANGELOG.md
+!themes/*.json
+!images/icon.png
