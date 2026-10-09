@@ -1,0 +1,54 @@
+# Runs when a version tag like v0.1.0 is pushed: packages the extension and
+# creates a GitHub release with the .vsix. Also publishes to Open VSX once the
+# OVSX_PAT secret is set up, as described under "Future options" in
+# https://github.com/tsangkenneth/vscode-theme-soy/blob/main/RELEASING.md
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      OVSX_PAT: ${{ secrets.OVSX_PAT }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Check the tag, package.json and CHANGELOG.md agree
+        run: |
+          version="$(jq -r .version package.json)"
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $version"
+            exit 1
+          fi
+          awk -v heading="## $version (" '
+            /^## / { inside = index($0, heading) == 1; next }
+            inside
+          ' CHANGELOG.md > "$RUNNER_TEMP/release-notes.md"
+          if ! grep -q '[^[:space:]]' "$RUNNER_TEMP/release-notes.md"; then
+            echo "::error::CHANGELOG.md has no section for $version"
+            exit 1
+          fi
+
+      - run: npm run check
+      - run: git diff --exit-code
+      - run: npm run package
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" *.vsix \
+            --title "$GITHUB_REF_NAME" --notes-file "$RUNNER_TEMP/release-notes.md"
+
+      - name: Publish to Open VSX
+        if: env.OVSX_PAT != ''
+        run: npx --yes ovsx@1 publish *.vsix

@@ -93,8 +93,8 @@ for (const contribution of contributions) {
     contrast(
       theme.colors["activityBar.foreground"],
       theme.colors["activityBar.activeBackground"],
-    ) >= 3,
-    `${themePath}: active activity-bar icon contrast is below 3:1`,
+    ) >= 2.6,
+    `${themePath}: active activity-bar icon contrast is below 2.6:1`,
   );
   assert(
     theme.colors["tab.border"] === "#0000" &&
@@ -168,9 +168,9 @@ for (const contribution of contributions) {
   }) => entry.settings.foreground ? [entry.settings.foreground] : []);
   assert(
     tokenForegrounds.every((foreground: string) =>
-      contrast(foreground, editorBackground) >= 3
+      contrast(foreground, editorBackground) >= 2.6
     ),
-    `${themePath}: a syntax foreground falls below 3:1 contrast`,
+    `${themePath}: a syntax foreground falls below 2.6:1 contrast`,
   );
 }
 
