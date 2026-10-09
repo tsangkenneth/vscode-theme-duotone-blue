@@ -32,6 +32,7 @@
     "dark",
     "light"
   ],
+  "icon": "images/icon.png",
   "galleryBanner": {
     "color": "#282f33",
     "theme": "dark"
@@ -41,6 +42,7 @@
     "check": "node src/main.ts && node scripts/check.ts",
     "preview": "node scripts/preview.ts",
     "screenshots": "node scripts/screenshots.ts",
+    "icon": "node scripts/icon.ts",
     "package": "npx --yes @vscode/vsce@4 package --no-dependencies"
   },
   "devDependencies": {

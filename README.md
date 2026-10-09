@@ -1,5 +1,11 @@
 # DuoTone Blue
 
+<br>
+<p align="center">
+  <img src="images/icon.png" alt="DuoTone Blue logo" width="128">
+</p>
+<br>
+
 DuoTone Blue is a pair of Visual Studio Code themes built from two hues: blue
 (Uno) and gold (Duo). The package contains **DuoTone Blue Light** and
 **DuoTone Blue Dark**, with the UI palette generated independently from syntax
@@ -100,6 +106,14 @@ using the theme's colors and the same tokenizer as the preview, and saves it to
 approximation; the code colors are what VS Code shows without a language server.
 Run `npm run screenshots` after changing colors, or pass `--variant <id>` for one
 variant and `--chrome <path>` if the browser isn't found.
+
+### Icon
+
+`scripts/icon.ts` draws the extension icon from the dark palette, with "DUO" in
+Duo-1 to Duo-3 above "TONE" in Uno-1 to Uno-4, and saves it to
+`images/icon.png` the same way. The letters are geometric paths rather than
+text, so the icon looks the same on every machine. Run `npm run icon` after
+changing the dark palette.
 
 ## License
 
