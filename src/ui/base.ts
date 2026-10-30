@@ -156,8 +156,10 @@ export const getBaseColors = (
   "gitDecoration.untrackedResourceForeground":
     type === "light" ? palette.uno["2"] : palette.uno["3"],
   "gitDecoration.ignoredResourceForeground": palette.foreground,
-  "diffEditor.insertedTextBackground": ui.selectionGutter,
-  "diffEditor.removedTextBackground": ui.selection,
+  "diffEditor.insertedLineBackground": `${ui.diffInserted}20`,
+  "diffEditor.removedLineBackground": `${ui.diffRemoved}20`,
+  "diffEditor.insertedTextBackground": `${ui.diffInserted}33`,
+  "diffEditor.removedTextBackground": `${ui.diffRemoved}33`,
 
   "terminal.background": palette.background,
   "terminal.foreground": palette.foreground,

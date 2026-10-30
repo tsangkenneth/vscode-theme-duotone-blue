@@ -46,6 +46,8 @@ export type ThemeConfig = {
     activityBarForeground: Hex;
     activityBarActiveBackground: Hex;
     tabStrip: Hex;
+    diffInserted: Hex;
+    diffRemoved: Hex;
     bracketColors: [Hex, Hex, Hex, Hex, Hex, Hex];
   };
 };

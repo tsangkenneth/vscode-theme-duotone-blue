@@ -51,6 +51,8 @@ const light: ThemeConfig = {
     activityBarForeground: "#246789",
     activityBarActiveBackground: "#9aadb6",
     tabStrip: "#cbd5d9",
+    diffInserted: "#9bb955",
+    diffRemoved: "#ff0000",
     bracketColors: [
       "#06202d",
       "#246789",
@@ -114,6 +116,8 @@ const dark: ThemeConfig = {
     activityBarForeground: "#d7eefe",
     activityBarActiveBackground: "#668499",
     tabStrip: "#1f282c",
+    diffInserted: "#9bb955",
+    diffRemoved: "#ff0000",
     bracketColors: [
       "#d7eefe",
       "#b9e1fd",
