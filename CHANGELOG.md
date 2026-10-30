@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
+## 0.1.1 (2026-10-30)
+
+### Fixed
+
+- Diff editor: the changed text is now highlighted more strongly than the rest
+  of its line, in red for removed text and green for inserted text. Before, a
+  grey highlight covered the changed text, so it stood out less than the
+  unchanged text around it.
+
 ## 0.1.0 (2026-10-08)
 
 ### Added
