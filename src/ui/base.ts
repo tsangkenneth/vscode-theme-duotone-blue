@@ -38,7 +38,7 @@ export const getBaseColors = (
   "editorBracketHighlight.foreground6": ui.bracketColors[5],
   "editorGutter.background": palette.background,
   "editorGutter.addedBackground": palette.uno["3"] ?? ui.accent,
-  "editorGutter.deletedBackground": ui.accent,
+  "editorGutter.deletedBackground": ui.deletedForeground,
   "editorGutter.modifiedBackground": palette.duo["2"],
   "editorOverviewRuler.border": ui.border,
 
@@ -149,13 +149,14 @@ export const getBaseColors = (
   "editorHoverWidget.border": ui.border,
 
   "gitDecoration.addedResourceForeground":
-    type === "light" ? palette.uno["2"] : palette.uno["3"],
+    type === "light" ? palette.uno["1"] : palette.uno["0"] ?? palette.uno["1"],
   "gitDecoration.modifiedResourceForeground":
     type === "light" ? palette.duo["1"] : palette.duo["2"],
-  "gitDecoration.deletedResourceForeground": ui.accent,
+  "gitDecoration.deletedResourceForeground": ui.deletedForeground,
   "gitDecoration.untrackedResourceForeground":
-    type === "light" ? palette.uno["2"] : palette.uno["3"],
-  "gitDecoration.ignoredResourceForeground": palette.foreground,
+    type === "light" ? palette.uno["1"] : palette.uno["0"] ?? palette.uno["1"],
+  "gitDecoration.ignoredResourceForeground":
+    type === "light" ? palette.uno["3"] : palette.uno["4"],
   "diffEditor.insertedLineBackground": `${ui.diffInserted}20`,
   "diffEditor.removedLineBackground": `${ui.diffRemoved}20`,
   "diffEditor.insertedTextBackground": `${ui.diffInserted}33`,

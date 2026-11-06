@@ -53,6 +53,7 @@ const light: ThemeConfig = {
     tabStrip: "#cbd5d9",
     diffInserted: "#9bb955",
     diffRemoved: "#ff0000",
+    deletedForeground: "#b3261e",
     bracketColors: [
       "#06202d",
       "#246789",
@@ -118,6 +119,7 @@ const dark: ThemeConfig = {
     tabStrip: "#1f282c",
     diffInserted: "#9bb955",
     diffRemoved: "#ff0000",
+    deletedForeground: "#f58080",
     bracketColors: [
       "#d7eefe",
       "#b9e1fd",

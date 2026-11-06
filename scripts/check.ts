@@ -113,6 +113,38 @@ for (const contribution of contributions) {
     ) >= 1.3,
     `${themePath}: unfocused list selection blends into the sidebar`,
   );
+  const sideBarBackground = theme.colors["sideBar.background"];
+  const sideBarTextContrast = contrast(
+    theme.colors["sideBar.foreground"],
+    sideBarBackground,
+  );
+  for (const state of ["added", "untracked"]) {
+    assert(
+      contrast(
+        theme.colors[`gitDecoration.${state}ResourceForeground`],
+        sideBarBackground,
+      ) > sideBarTextContrast,
+      `${themePath}: ${state} files should stand out more than sidebar text`,
+    );
+  }
+  const deleted = theme.colors["gitDecoration.deletedResourceForeground"];
+  assert(
+    deleted !== theme.colors["gitDecoration.modifiedResourceForeground"] &&
+      contrast(deleted, sideBarBackground) >= 4.5,
+    `${themePath}: deleted files should differ from modified files and stay readable`,
+  );
+  assert(
+    theme.colors["editorGutter.deletedBackground"] === deleted,
+    `${themePath}: the gutter's deleted-line marker should match deleted files`,
+  );
+  const ignoredContrast = contrast(
+    theme.colors["gitDecoration.ignoredResourceForeground"],
+    sideBarBackground,
+  );
+  assert(
+    ignoredContrast < sideBarTextContrast && ignoredContrast >= 2.5,
+    `${themePath}: ignored files should be dimmer than sidebar text but stay readable`,
+  );
   assert(
     !("contrastActiveBorder" in theme.colors),
     `${themePath}: contrastActiveBorder outlines activity-bar items, panel tabs and list rows`,

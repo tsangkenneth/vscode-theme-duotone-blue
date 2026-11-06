@@ -48,6 +48,7 @@ export type ThemeConfig = {
     tabStrip: Hex;
     diffInserted: Hex;
     diffRemoved: Hex;
+    deletedForeground: Hex;
     bracketColors: [Hex, Hex, Hex, Hex, Hex, Hex];
   };
 };

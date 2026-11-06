@@ -4,6 +4,22 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions follow
 [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+### Fixed
+
+- Explorer: files and folders ignored by Git, such as `node_modules`, are now
+  shown in a dimmer blue. Before, they were the same colour as other files.
+- Explorer: new files, whether untracked or staged, now stand out from other
+  files. They are white in the dark theme and near-black in the light theme.
+  Before, the light theme showed them in the same colour as other files, and
+  the dark theme in a blue only slightly different from it.
+- Source Control: deleted files are now red, to match removed text in the diff
+  editor. Before, they were gold, which in the light theme was the same colour
+  as modified files.
+- Editor: the margin marker for deleted lines is now the same red. Before, it
+  was a gold close to the marker for modified lines.
+
 ## 0.1.1 (2026-10-30)
 
 ### Fixed
