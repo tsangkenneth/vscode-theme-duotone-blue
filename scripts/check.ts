@@ -113,6 +113,16 @@ for (const contribution of contributions) {
     ) >= 1.3,
     `${themePath}: unfocused list selection blends into the sidebar`,
   );
+  const separatorPairs = [
+    ["menu separators", "menu.separatorBackground", "menu.background"],
+    ["quick pick group dividers", "pickerGroup.border", "quickInput.background"],
+  ];
+  for (const [label, separatorKey, backgroundKey] of separatorPairs) {
+    assert(
+      contrast(theme.colors[separatorKey], theme.colors[backgroundKey]) >= 1.4,
+      `${themePath}: ${label} blend into their background`,
+    );
+  }
   const sideBarBackground = theme.colors["sideBar.background"];
   const sideBarTextContrast = contrast(
     theme.colors["sideBar.foreground"],

@@ -124,11 +124,15 @@ export const getBaseColors = (
   "menu.foreground": palette.foreground,
   "menu.selectionBackground": ui.selection,
   "menu.selectionForeground": ui.selectionForeground,
-  "menu.separatorBackground": ui.border,
+  // In the dark theme the raised surface is lighter than the sidebar, which
+  // brings it close to ui.border, so menu separators and quick pick group
+  // dividers use the muted blue there.
+  "menu.separatorBackground": type === "light" ? ui.border : palette.uno["4"],
   "quickInput.background": ui.raisedSurface,
   "quickInput.foreground": palette.foreground,
   "quickInputList.focusBackground": ui.selection,
   "quickInputList.focusForeground": ui.selectionForeground,
+  "pickerGroup.border": type === "light" ? ui.border : palette.uno["4"],
   "actionBar.toggledBackground": ui.selection,
   "toolbar.hoverBackground": `${ui.selection}66`,
   "toolbar.hoverOutline": "#0000",

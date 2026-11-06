@@ -19,6 +19,12 @@ All notable changes to this project are documented here. The format is based on
   as modified files.
 - Editor: the margin marker for deleted lines is now the same red. Before, it
   was a gold close to the marker for modified lines.
+- Quick pick: in the dark theme, the lines between groups, such as branches,
+  remote branches and tags when checking out a branch, are now visible. Before,
+  they were almost the same colour as the background.
+- Menus: in the dark theme, the lines between groups of menu items are now
+  easier to see. Before, they were faint. This applies to menus drawn by VS
+  Code, not to the native menus macOS uses by default.
 
 ## 0.1.1 (2026-10-30)
 

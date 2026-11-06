@@ -122,6 +122,7 @@
     "quickInput.foreground": "#246789",
     "quickInputList.focusBackground": "#c1c9cc",
     "quickInputList.focusForeground": "#06202d",
+    "pickerGroup.border": "#c6cdd0",
     "actionBar.toggledBackground": "#c1c9cc",
     "toolbar.hoverBackground": "#c1c9cc66",
     "toolbar.hoverOutline": "#0000",
